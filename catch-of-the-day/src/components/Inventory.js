@@ -4,7 +4,6 @@ import firebase from "firebase";
 import AddFishForm from "./AddFishForm";
 import EditFishForm from "./EditFishForm";
 import Login from "./Login";
-import Loader from "./Loader";
 import base, { firebaseApp } from "../base";
 
 class Inventory extends React.Component {
@@ -54,6 +53,7 @@ class Inventory extends React.Component {
 
   render() {
     const logOut = <button onClick={this.logout}>Log Out</button>;
+
     if (!this.state.uid) {
       return <Login authenticate={this.authenticate} />;
     }
@@ -65,7 +65,6 @@ class Inventory extends React.Component {
         </div>
       );
     }
-
     return (
       <div className="inventory">
         <h2>Inventory</h2>
